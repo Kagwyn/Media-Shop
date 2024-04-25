@@ -1,5 +1,7 @@
 <h1>Books:</h1>
 
+<input id="input" class="form-control" type="search" placeholder="Search Books">
+
 <% @books.each do |book| %>
     <div class="row">
         <div class="col text-center">
@@ -8,4 +10,29 @@
     </div>
 <% end %>
 
-<%= link_to "Back", root_path, class: "btn btn-danger"%>
+<%= link_to "Back", root_path, class: "btn btn-danger" %>
+
+
+
+<script>
+    const input = document.getElementById("input");
+    const books = document.querySelectorAll(".row");
+
+    input.addEventListener("input", search);
+    
+    function search() {
+        const searchTerm = input.value.trim().toLowerCase();
+
+        for (i = 0; i < books.length; i++) {
+            const title = books[i].textContent.trim().toLowerCase();
+
+            if (title.includes(searchTerm)) {
+                books[i].style.display = "block";
+            }
+            
+            else {
+                books[i].style.display = "none";
+            }
+        }  
+    }
+</script>
