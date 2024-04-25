@@ -44,6 +44,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_24_214513) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
+    t.string "author"
     t.decimal "price"
     t.date "release"
     t.datetime "created_at", null: false
@@ -52,6 +53,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_24_214513) do
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
+    t.string "director"
     t.decimal "price"
     t.date "release"
     t.datetime "created_at", null: false

@@ -3,4 +3,9 @@ class BooksController < ApplicationController
         @books = Book.all
         render :index
     end
+
+    def show
+        @book = Book.find(params[:id])
+        render :show
+    end
 end

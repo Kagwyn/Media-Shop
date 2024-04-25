@@ -1,7 +1,11 @@
+<h1>Books:</h1>
+
 <% @books.each do |book| %>
-    <div col="row">
-        <%= book.title %>
+    <div class="row">
+        <div class="col text-center">
+            <%= link_to book.title, book_path(book), class: "btn btn-primary w-50" %>
+        </div>
     </div>
 <% end %>
 
-<%= link_to "Back", root_path, class: "btn btn-primary"%>
+<%= link_to "Back", root_path, class: "btn btn-danger"%>
