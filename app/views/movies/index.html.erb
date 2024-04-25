@@ -3,7 +3,7 @@
 <% @movies.each do |movie| %>
     <div class="row">
         <div class="col text-center">
-            <%= movie.title %>
+            <%= link_to movie.title, movie_path(movie), class: "btn btn-primary w-50" %>
         </div>
     </div>
 <% end %>
