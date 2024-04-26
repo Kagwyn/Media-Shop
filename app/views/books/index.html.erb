@@ -4,8 +4,16 @@
 
 <% @books.each do |book| %>
     <div class="row">
-        <div class="col text-center">
-            <%= link_to book.title, book_path(book), class: "btn btn-primary w-50" %>
+        <h3><%= book.title %></h3>
+
+        <div class="col-6">
+            <%= image_tag book.picture %>
+        </div>
+
+        <div class="col-6 details-container">
+            <p><%= "Author: #{book.author}" %></p>
+            <p><%= "Price: $#{sprintf("%0.02f", book.price)}" %></p>
+            <p><%= "Release Date: #{book.release}" %></p>         
         </div>
     </div>
 <% end %>
@@ -27,7 +35,7 @@
             const title = books[i].textContent.trim().toLowerCase();
 
             if (title.includes(searchTerm)) {
-                books[i].style.display = "block";
+                books[i].style.display = "flex";
             }
             
             else {

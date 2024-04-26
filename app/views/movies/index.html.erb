@@ -2,10 +2,18 @@
 
 <% @movies.each do |movie| %>
     <div class="row">
-        <div class="col text-center">
-            <%= link_to movie.title, movie_path(movie), class: "btn btn-primary w-50" %>
+        <h3><%= movie.title %></h3>
+
+        <div class="col-6">
+            <%= image_tag movie.picture %>
+        </div>
+
+        <div class="col-6 details-container">
+            <p><%= "Director: #{movie.director}" %></p>
+            <p><%= "Price: $#{sprintf("%0.02f", movie.price)}" %></p>
+            <p><%= "Release Date: #{movie.release}" %></p>
         </div>
     </div>
 <% end %>
 
-<%= link_to "Back", root_path, class: "btn btn-danger"%>
+<%= link_to "Back", root_path, class: "btn btn-danger" %>
